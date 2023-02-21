@@ -1,17 +1,28 @@
 {% extends 'base.html' %}
 
+{% block 'head' %} 
+    <style>
+        #id_nome{
+            border: 1px solid red;
+        }
+
+
+        #id_idade{            
+            border: 2px solid blue;
+        }
+
+    </style>
+{% endblock %}
+
 {% block 'conteudo' %} 
 <br>
 <h1> Você esta no sistema</h1>
 
 <form action="#" method="POST">{% csrf_token %}
 
-    <table>
-        {{form.as_table}}
-    </table>
-    
+    {{form}}
     <input type="submit" class="btn btnc-success">
-    
+
 </form>
 
 {% endblock %}

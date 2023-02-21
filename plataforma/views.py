@@ -6,5 +6,5 @@ from forms import Cliente
 
 @login_required(login_url= '/auth/login')
 def home(request):
-        form = Cliente.form
+        form = Cliente()
         return render(request, 'home.html', {'form': form})
