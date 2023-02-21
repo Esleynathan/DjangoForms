@@ -4,6 +4,14 @@
 <br>
 <h1> Você esta no sistema</h1>
 
+<form action="#" method="POST">{% csrf_token %}
 
+    <table>
+        {{form.as_table}}
+    </table>
+    
+    <input type="submit" class="btn btnc-success">
+    
+</form>
 
 {% endblock %}
