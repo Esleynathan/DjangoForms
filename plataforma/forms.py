@@ -6,6 +6,7 @@ class Cliente(forms.Form):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        
         self.fields['nome'].widget.attrs['class'] = 'form-control'
         self.fields['nome'].widget.attrs['placeholder'] = 'Digite seu nome...'   
         
