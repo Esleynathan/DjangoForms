@@ -7,8 +7,19 @@ from .forms import Livro
 
 @login_required(login_url= '/auth/login')
 def home(request):
-	form = Livro()
-	return render(request, 'home.html', {'form': form})
+	if request.method == "GET":
+		form = Livro()		
+		return render(request, 'home.html', {'form': form})
+	elif request.method == "POST":		
+		form = Livro(request.POST)
+
+		if form.is_valid():
+			form.save ()
+			form = Livro()			
+			return render(request, 'home.html', {'form': form})		
+		else:
+			return render(request, 'home.html', {'form': form})		
+		
 
 # @login_required(login_url= '/auth/login')
 # def home(request):

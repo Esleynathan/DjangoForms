@@ -21,7 +21,7 @@
     <h1> Você esta no sistema</h1>
     <br>
     <form action="{% url 'home' %}" method="POST">{% csrf_token %}
-        {{form}}
+        {{form.as_p}}
         <br>
         <input type="submit" class="btn btn-success">
     </form>
